@@ -1,3 +1,21 @@
+<?php
+// Database connectie
+$host = "localhost"; 
+$user = "root";      // pas aan naar jouw gebruikersnaam
+$pass = "";          // pas aan naar jouw wachtwoord
+$dbname = "inventaris_db";
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+// Check connectie
+if ($conn->connect_error) {
+    die("Connectie mislukt: " . $conn->connect_error);
+}
+
+// Query om categorieën op te halen
+$sql = "SELECT id, naam FROM categories";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -21,44 +39,34 @@
       </section>
 
       <section class="content">
-        <table>
-          <thead>
-            <tr>
-              <th>Naam</th>
-              <th>Type</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Item naam</td>
-              <td>Item type</td>
-              <td>Item status</td>
-            </tr>
-            <tr>
-              <td>Item naam</td>
-              <td>Item type</td>
-              <td>Item status</td>
-            </tr>
-            <tr>
-              <td>Item naam</td>
-              <td>Item type</td>
-              <td>Item status</td>
-            </tr>
-            <tr>
-              <td>Item naam</td>
-              <td>Item type</td>
-              <td>Item status</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Categorie</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php if ($result->num_rows > 0): ?>
+                <?php while($row = $result->fetch_assoc()): ?>
+                  <tr>
+                    <td><?= htmlspecialchars($row['id']) ?></td>
+                    <td><?= htmlspecialchars($row['naam']) ?></td>
+                  </tr>
+                <?php endwhile; ?>
+              <?php else: ?>
+                <tr>
+                  <td colspan="2">Geen categorieën gevonden</td>
+                </tr>
+              <?php endif; ?>
+            </tbody>
+          </table>
+        </div>
 
         <aside class="details">
           <h3>Itemdetails</h3>
-          <p><b>Naam:</b> Item naam</p>
-          <p><b>Type:</b> Item type</p>
-          <p><b>Status:</b> Item status</p>
-          <button>QR-code genereren</button>
+          <p><b>Categorie:</b> Selecteer een categorie</p>
         </aside>
       </section>
     </main>

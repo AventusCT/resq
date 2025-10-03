@@ -58,7 +58,7 @@ table {
 
 table th, table td {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 30px;
   text-align: left;
 }
 
@@ -76,4 +76,19 @@ table th, table td {
   background: #e0e0e0;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.lijst {
+  max-height: 250px;   
+  overflow-y: auto;    
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+
+.lijst thead th {
+  position: sticky;
+  top: 0;
+  background: #eaeaea;
+  z-index: 2;
 }

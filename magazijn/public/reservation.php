@@ -18,6 +18,8 @@ include 'db_connect.php';
     <div class="statusverandercontainer">
         <h1>Status van bestelling veranderen</h1>
         <form id="reservationForm">
+            
+            <p>Je bent momenteel de volgende bestelling aan het bewerken: <span id="currentReservationId"></span></p>
             <label for="reservationId">Bestelling ID:</label>
             <input type="text" id="reservationId" name="reservationId" readonly>
 
@@ -26,9 +28,9 @@ include 'db_connect.php';
                 <option value="reserveren">Reserveren</option>
                 <option value="ophalen">Ophalen</option>
                 <option value="retour">Terughalen</option>
+                <option value="verloren">Verloren</option>
             </select>
-
-            <button class="statusproduct"> Update productstatus</button>
+            <button class="statusproduct">Update productstatus</button>
         </form>
         <div id="message"></div>
     </div>

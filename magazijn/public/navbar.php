@@ -5,17 +5,14 @@
             <div style="display: flex; align-items: center; gap: 24px;">
                 <?php if (isset($_SESSION['user'])): ?>
                     <?php $user = unserialize($_SESSION['user']); ?>
-                    <a class="nav-link" href="account.php" style="margin-right: 16px;">Account</a>
-                    <a class="nav-link" href="bestellen.php" style="margin-right: 16px;">Bestellen</a>
-                    <a class="nav-link" href="feedback.php" style="margin-right: 16px;">Feedback</a>
+                    <a class="nav-link" href="inventarisbeheer.php" style="margin-right: 16px;">Inventarisbeheer</a>
+                    <a class="nav-link" href="warehouse.php" style="margin-right: 16px;">Warenhuisplaatsing</a>
+                    <a class="nav-link" href="reservation.php" style="margin-right: 16px;">Status Veranderen</a>
+                    <a class="nav-link" href="index.php" style="margin-right: 16px;">Index</a>
                     <?php if ($user->getRole() === 'admin'): ?>
-                        <a class="nav-link" href="itemadmin.php" style="margin-right: 16px;">Productbeheer</a>
-                        <a class="nav-link" href="feedbackadmin.php" style="margin-right: 16px;">Feedbackbeheer</a>
+                        <a class="nav-link" href="admin.php" style="margin-right: 16px;">AdminPanel</a>
                     <?php endif; ?>
                     <a class="nav-link" href="logout.php" style="margin-right: 16px;">Uitloggen</a>
-                <?php else: ?>
-                    <a class="nav-link" href="login.php" style="margin-right: 16px;">Inloggen</a>
-                    <a class="nav-link" href="registratie.php" style="margin-right: 16px;">Registreren</a>
                 <?php endif; ?>
             </div>
         </div>

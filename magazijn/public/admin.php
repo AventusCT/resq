@@ -19,7 +19,7 @@ include 'navbar.php';
     <div class="container">
         <h1>Admin Panel</h1>
 
-        <p>Welkom, admin!</p>
+        <p>Welkom, <?php echo $_SESSION['admin_name']; ?>!</p>
         <a href="admin_users.php">Beheer gebruikers</a><br>
         <a href="admin_products.php">Beheer producten</a><br>
         <a href="admin_orders.php">Beheer bestellingen</a><br>

@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 include 'db_connect.php';
+include 'navbar.php';
 ?>
 
 <html>
@@ -15,7 +16,7 @@ include 'db_connect.php';
     <script src="magazijn/public/js/reservation.js"></script>
 </head>
 <body>
-    <div class="statusverandercontainer">
+    <div class="container">
         <h1>Status van bestelling veranderen</h1>
         <form id="reservationForm">
             

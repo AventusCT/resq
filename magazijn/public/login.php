@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 include 'db_connect.php';
+include 'navbar.php';
 
 //loginfunctie 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="logincontainer">
+    <div class="container">
         <h1>Login</h1>
         <form id="loginForm" method="POST" action="authenticate.php">
             <label for="username">Gebruikersnaam:</label>

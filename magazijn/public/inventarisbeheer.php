@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+include 'db_connect.php';
+include 'navbar.php';
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>

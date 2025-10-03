@@ -21,7 +21,7 @@ $result = $conn->query($sql);
 <head>
   <meta charset="UTF-8">
   <title>Inventarisbeheer</title>
-  <link rel="stylesheet" href="/magazijn/public/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="container">

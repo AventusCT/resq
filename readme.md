@@ -1,5 +1,3 @@
-ResQ
+## RESQ
 
-hi
-
-MAPLUC
+Qr-code scannen.

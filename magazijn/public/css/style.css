@@ -117,3 +117,6 @@ button {
 button:hover {
   background: #b2e2ff;
 }
+.controls button:hover {
+  background: #b2e2ff;
+}

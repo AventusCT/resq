@@ -58,7 +58,7 @@ table {
 
 table th, table td {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 30px;
   text-align: left;
 }
 
@@ -78,6 +78,20 @@ table th, table td {
   cursor: pointer;
 }
 
+.lijst {
+  max-height: 250px;   
+  overflow-y: auto;    
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+
+.lijst thead th {
+  position: sticky;
+  top: 0;
+  background: #eaeaea;
+  z-index: 2;
+}
 .statusverandercontainer div {
     max-width: 600px;
     margin: 50px auto;
@@ -101,5 +115,8 @@ button {
   cursor: pointer;
 }
 button:hover {
+  background: #b2e2ff;
+}
+.controls button:hover {
   background: #b2e2ff;
 }

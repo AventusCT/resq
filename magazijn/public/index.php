@@ -21,9 +21,9 @@ $gebruikersnaam = $_SESSION['gebruikersnaam'] ?? 'Gebruiker';
     
     </div>
    <div class="nav-links">
-    <a href=""><i class="fas fa-shopping-basket"></i> Inventarisbeheer</a>
-    <a href=""><i class="fas fa-list"></i> Magazijnbeheer</a>
-    <a href=""><i class="fas fa-star"></i> Inloggen</a>
+    <a href="inventarisbeheer.php"><i class="fas fa-shopping-basket"></i> Inventarisbeheer</a>
+    <a href="magazijnbeheer.php"><i class="fas fa-list"></i> Magazijnbeheer</a>
+    <a href="inloggen.php"><i class="fas fa-star"></i> Inloggen</a>
 
     <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
         <a href="productbeheer.php"><i class="fas fa-cogs"></i> Productbeheer</a>
@@ -39,6 +39,5 @@ $gebruikersnaam = $_SESSION['gebruikersnaam'] ?? 'Gebruiker';
     <?php endif; ?>
 </div>
 
-</div>
 </body>
 </html>

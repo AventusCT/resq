@@ -16,7 +16,7 @@ $gebruikersnaam = $_SESSION['gebruikersnaam'] ?? 'Gebruiker';
 <body>
 <div class="container">
     <h1>Welkom, <?= htmlspecialchars($gebruikersnaam) ?>!</h1>
-    <p>Dit is de dashboard. Hier kun je door de website heen navigeren..</p>
+    <p>Kies een optie:</p>
 
     
     </div>

@@ -1,5 +1,6 @@
 <?php
 include 'db_connect.php';
+include 'verwerking/verwerking_registratie.php';
 include 'navbar.php';
 if (isset($_SESSION['user'])) {
     header("Location: account.php");

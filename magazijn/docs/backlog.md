@@ -1,0 +1,1 @@
+Assim: Front End van warehouse.html (tijdelijk html) gemaakt en de bij behorende css en javascript.

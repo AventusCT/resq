@@ -9,12 +9,14 @@ if (isset($_SESSION['user'])) {
 ?>
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registratie</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="card">
@@ -48,4 +50,5 @@ if (isset($_SESSION['user'])) {
         </p>
     </div>
 </body>
+
 </html>

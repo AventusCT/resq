@@ -1,19 +1,21 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
+  header("Location: login.php");
+  exit();
 }
 include 'db_connect.php';
 include 'navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8">
   <title>Inventarisbeheer</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="container">
 
@@ -74,4 +76,5 @@ include 'navbar.php';
 
   </div>
 </body>
+
 </html>

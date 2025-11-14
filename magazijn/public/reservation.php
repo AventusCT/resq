@@ -9,24 +9,26 @@ include 'navbar.php';
 ?>
 
 <html>
+
 <head>
     <title>Status van bestelling veranderen</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="magazijn/public/js/script.js"></script>
     <script src="magazijn/public/js/reservation.js"></script>
 </head>
+
 <body>
     <div class="container">
         <h1>Status van bestelling veranderen</h1>
         <form id="reservationForm">
-            
+
             <p>Je bent momenteel de volgende bestelling aan het bewerken: <span id="currentReservationId"></span></p>
             <label for="reservationId">Bestelling ID:</label>
             <input type="text" id="reservationId" name="reservationId" readonly>
 
             <p>Datum van reservatie: <span id="reservationDate"></span></p>
             <p>Huidige status: <span id="currentStatus"></span></p
-            <label for="status">Status wisselen:</label>
+                <label for="status">Status wisselen:</label>
             <select id="status" name="status">
                 <option value="reserveren">Reserveren</option>
                 <option value="ophalen">Ophalen</option>
@@ -38,4 +40,5 @@ include 'navbar.php';
         <div id="message"></div>
     </div>
 </body>
+
 </html>

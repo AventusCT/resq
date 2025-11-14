@@ -6,6 +6,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 include 'db_connect.php';
 include 'navbar.php';
+include 'verwerking/verwerking_login.php';
 
 //loginfunctie 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -27,11 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <html>
+
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="container">
         <h1>Login</h1>
@@ -47,4 +50,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div id="message"></div>
     </div>
 </body>
+
 </html>

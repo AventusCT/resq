@@ -24,14 +24,14 @@ session_start();
                     </li>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.php">Dashboard</a>
+                            <a class="nav-link" href="inventarisbeheer.php"></a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">Inloggen</a>
+                            <a class="nav-link" href="login.php"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="register.php">Registreren</a>
+                            <a class="nav-link" href="register.php"></a>
                         </li>
                     <?php endif; ?>
                 </ul>

@@ -21,23 +21,8 @@ include 'includes/header.php';
 
 
     </div>
-    <div class="nav-links">
-        <a href=""><i class="fas fa-shopping-basket"></i> Inventarisbeheer</a>
-        <a href=""><i class="fas fa-list"></i> Magazijnbeheer</a>
-        <a href=""><i class="fas fa-star"></i> Inloggen</a>
+ 
 
-        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
-            <a href="productbeheer.php"><i class="fas fa-cogs"></i> Productbeheer</a>
-        <?php endif; ?>
-
-        <?php if (isset($_SESSION['gebruikersnaam'])): ?>
-
-            <a href="uitloggen.php"><i class="fas fa-sign-out-alt"></i> Uitloggen</a>
-        <?php else: ?>
-
-            <a href="registratie.php"><i class="fas fa-user-plus"></i> Registreren</a>
-
-        <?php endif; ?>
     </div>
 
     </div>

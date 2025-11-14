@@ -20,10 +20,17 @@ $gebruikersnaam = $_SESSION['gebruikersnaam'] ?? 'Gebruiker';
 
     
     </div>
+<<<<<<< Updated upstream
    <div class="nav-links">
     <a href=""><i class="fas fa-shopping-basket"></i> Inventarisbeheer</a>
     <a href=""><i class="fas fa-list"></i> Magazijnbeheer</a>
     <a href=""><i class="fas fa-star"></i> Inloggen</a>
+=======
+    <div class="nav-links">
+        <a href=""><i class="fas fa-shopping-basket"></i> Inventarisbeheer</a>
+        <a href=""><i class="fas fa-list"></i> Magazijnbeheer</a>
+        <a href="login.php"><i class="fas fa-star"></i> Inloggen</a>
+>>>>>>> Stashed changes
 
     <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
         <a href="productbeheer.php"><i class="fas fa-cogs"></i> Productbeheer</a>

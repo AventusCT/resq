@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
-        <a class="navbar-brand" href="account.php" style="margin-right: 16px;">Webwinkel L.D.H</a>
+        <a class="navbar-brand" href="account.php" style="margin-right: 16px;">ResQ</a>
         <div style="flex: 1;">
             <div style="display: flex; align-items: center; gap: 24px;">
                 <?php if (isset($_SESSION['user'])): ?>

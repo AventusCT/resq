@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 include 'db_connect.php';
-include 'navbar.php';
+include 'header.php';
 include 'verwerking/verwerking_login.php';
 
 //loginfunctie 

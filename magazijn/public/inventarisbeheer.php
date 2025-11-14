@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
   exit();
 }
 include 'db_connect.php';
-include 'navbar.php';
+include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="nl">

@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 include 'db_connect.php';
-include 'navbar.php';
+include 'header.php';
 ?>
 <html>
 

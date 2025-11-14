@@ -1,12 +1,4 @@
-<?php
-include 'db_connect.php';
-include 'verwerking/verwerking_registratie.php';
-include 'header.php';
-if (isset($_SESSION['user'])) {
-    header("Location: account.php");
-    exit;
-}
-?>
+
 <!DOCTYPE html>
 <html lang="nl">
 

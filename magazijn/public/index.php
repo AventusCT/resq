@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-$gebruikersnaam = $_SESSION['gebruikersnaam'] ?? 'Gebruiker';
-
+include 'includes/header.php';
 ?>
 <!DOCTYPE html>
 

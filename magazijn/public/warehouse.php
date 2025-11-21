@@ -52,8 +52,6 @@ include 'includes/header.php';
               <div>
                 <div class="kpi__label">Totaal Items</div>
                 <div class="kpi__value" id="kpi-total">0</div>
-              </div>
-              <div class="kpi__icon">📦</div>
             </div>
           </article>
           <article class="card kpi kpi--green">

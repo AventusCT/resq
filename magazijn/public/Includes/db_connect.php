@@ -6,7 +6,7 @@ $username = "root";
 
 $password = "";
 
-$database = "php1"; 
+$database = "projectfase2"; 
 
 
 $conn = new mysqli($servername, $username, $password, $database);

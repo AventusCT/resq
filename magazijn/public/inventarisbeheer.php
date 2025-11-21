@@ -9,7 +9,7 @@ include 'includes/header.php';
 <head>
   <meta charset="UTF-8">
   <title>Inventarisbeheer</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inventarisbeheer.css">
 </head>
 
 <body>

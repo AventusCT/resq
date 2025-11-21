@@ -7,7 +7,7 @@ include 'includes/header.php';
 
 <head>
     <title>Status van bestelling veranderen</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reservation.css">
     <script src="magazijn/public/js/script.js"></script>
     <script src="magazijn/public/js/reservation.js"></script>
 </head>

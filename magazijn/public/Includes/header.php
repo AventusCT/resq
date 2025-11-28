@@ -23,7 +23,7 @@
             <?php else: ?>
 
                 <li><a href="login.php" class="hover:text-yellow-400">Inloggen</a></li>
-                <li><a href="register.php" class="hover:text-yellow-400">Registreren</a></li>
+                <li><a href="registratie.php" class="hover:text-yellow-400">Registreren</a></li>
 
             <?php endif; ?>
 

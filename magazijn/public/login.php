@@ -7,7 +7,7 @@ include 'includes/header.php';
 
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inventarisbeheer.css">
     <script src="js/script.js"></script>
 </head>
 

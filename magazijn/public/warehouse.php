@@ -9,7 +9,7 @@ include 'includes/header.php';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Magazijnbeheer</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/warehouse.css" />
   <link rel="icon" href="favicon.png" type="assets/icon.png">
   </head>
   <body class="page-body bg-spotify-dark text-white">
@@ -52,8 +52,6 @@ include 'includes/header.php';
               <div>
                 <div class="kpi__label">Totaal Items</div>
                 <div class="kpi__value" id="kpi-total">0</div>
-              </div>
-              <div class="kpi__icon">📦</div>
             </div>
           </article>
           <article class="card kpi kpi--green">

@@ -11,7 +11,7 @@ body {
   background: #fff;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
 }
 
 header {
@@ -37,7 +37,7 @@ header {
   padding: 10px 16px;
   border: none;
   border-radius: 6px;
-  background: #e0e0e0;
+  background: #001D4C;
   cursor: pointer;
 }
 
@@ -73,7 +73,7 @@ table th, table td {
   margin-top: 15px;
   padding: 10px 16px;
   border: none;
-  background: #e0e0e0;
+  background: #001D4C;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -110,19 +110,19 @@ button {
   margin-top: 15px;
   padding: 10px 16px;
   border: none;
-  background: #e0e0e0;
+  background: #9c9c9c;
   border-radius: 6px;
   cursor: pointer;
 }
 button:hover {
-  background: #b2e2ff;
+  background: #33ff189f;
 }
 .controls button:hover {
-  background: #b2e2ff;
+  background: #001D4C;
 }
 
 header {
-    background-color: #02d9ff; /* donkergrijs */
+    background-color: #001D4C; /* donkergrijs */
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -156,4 +156,61 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #fbbf24; /* oranje highlight */
+}
+
+.NavCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.NavCard {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavCard i {
+    margin-bottom: 15px;
+    color: #001D4C; /* mooie blauwe kleur */
+}
+
+.NavCard h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.NavCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.NavCard {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.NavCard:nth-child(1) { animation-delay: 0.1s; }
+.NavCard:nth-child(2) { animation-delay: 0.2s; }
+.NavCard:nth-child(3) { animation-delay: 0.3s; }
+/* enz. als je er meer hebt */
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

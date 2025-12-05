@@ -1,55 +1,38 @@
-<?php
+<header class="bg-gray-800 text-white px-8 py-4 flex justify-between items-center sticky top-0 z-50 shadow">
+    <h1 class="text-2xl font-bold">Welkom op bij ResQ</h1>
 
-?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">ResQ</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav>
+        <ul class="flex gap-6">
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
+            <li><a href="index.php" class="hover:text-yellow-400">Home</a></li>
 
-                <?php if (isset($_SESSION['user'])):
-                    $user = is_string($_SESSION['user']) ? unserialize($_SESSION['user']) : $_SESSION['user'];
-                ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="inventarisbeheer.php">Inventarisbeheer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="warehouse.php">Warenhuisplaatsing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reservation.php">Status Veranderen</a>
-                    </li>
-                    <?php if (method_exists($user, 'getRole') && $user->getRole() === 'admin'): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="admin.php">AdminPanel</a>
-                        </li>
-                    <?php endif; ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Uitloggen</a>
-                    </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.php">Register</a>
-                    </li>
+            <?php if (isset($_SESSION['user'])):
+                $user = is_string($_SESSION['user']) ? unserialize($_SESSION['user']) : $_SESSION['user'];
+            ?>
+
+                <li><a href="inventarisbeheer.php" class="hover:text-yellow-400">Inventarisbeheer</a></li>
+                <li><a href="warehouse.php" class="hover:text-yellow-400">Warenhuisplaatsing</a></li>
+                <li><a href="reservation.php" class="hover:text-yellow-400">Status Veranderen</a></li>
+
+                <?php if (method_exists($user, 'getRole') && $user->getRole() === 'admin'): ?>
+                    <li><a href="admin.php" class="hover:text-yellow-400">AdminPanel</a></li>
                 <?php endif; ?>
-            </ul>
 
-            <?php if (isset($user) && method_exists($user, 'getName')): ?>
-                <span class="navbar-text">
-                    Welkom, <?= htmlspecialchars($user->getName()); ?>
-                </span>
+                <li><a href="logout.php" class="hover:text-yellow-400">Uitloggen</a></li>
+
+            <?php else: ?>
+
+                <li><a href="login.php" class="hover:text-yellow-400">Inloggen</a></li>
+                <li><a href="registratie.php" class="hover:text-yellow-400">Registreren</a></li>
+
             <?php endif; ?>
-        </div>
-    </div>
-</nav>
+
+        </ul>
+    </nav>
+
+    <?php if (isset($user) && method_exists($user, 'getName')): ?>
+        <span class="ml-6 text-yellow-300 font-semibold">
+            Welkom, <?= htmlspecialchars($user->getName()); ?>
+        </span>
+    <?php endif; ?>
+</header>

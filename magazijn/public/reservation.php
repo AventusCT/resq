@@ -6,15 +6,15 @@ include 'includes/header.php';
 <html>
 
 <head>
-    <title>Status veranderen</title>
-    <link rel="stylesheet" href="css/reservation.css">
+    <title>Status van bestelling veranderen</title>
+    <link rel="stylesheet" href="css/inventarisbeheer.css">
     <script src="magazijn/public/js/script.js"></script>
     <script src="magazijn/public/js/reservation.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Status veranderen</h1>
+        <h1>Status van bestelling veranderen</h1>
         <form id="reservationForm">
 
             <p>Je bent momenteel de volgende bestelling aan het bewerken: <span id="currentReservationId"></span></p>

@@ -1,0 +1,34 @@
+# ResQ Security & Configuration
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "\.(sql|log|ini|env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# PHP security settings
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+</IfModule>
+
+# Enable error logging (adjust path as needed)
+# php_value error_log /path/to/error.log
+
+# Prevent access to setup.php after initial setup
+<Files "setup.php">
+    # Uncomment the line below after setup is complete
+    # Order allow,deny
+    # Deny from all
+</Files>
+
+# URL Rewriting (optional, for clean URLs)
+# RewriteEngine On
+# RewriteBase /resq/magazijn/public/
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+

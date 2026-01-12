@@ -23,17 +23,19 @@ include 'includes/header.php';
 
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <title>Inloggen</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/inventarisbeheer.css">
+    <link rel="stylesheet" href="css/inventarisbeheer.css">
 </head>
+
 <body class="bg-light">
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
                 <h3 class="mb-4 text-center">Inloggen</h3>
 
@@ -51,7 +53,7 @@ include 'includes/header.php';
                         <input type="email" id="email" name="email" class="form-control" required autofocus>
                     </div>
 
-                    
+
                     <div class="form-group">
                         <label for="password">Wachtwoord</label>
                         <input type="password" id="password" name="password" class="form-control" required>
@@ -68,7 +70,8 @@ include 'includes/header.php';
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 </body>
+
 </html>

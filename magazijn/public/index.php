@@ -7,6 +7,7 @@ $username = $_SESSION['username'] ?? 'Gast';
 ?>
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +26,7 @@ $username = $_SESSION['username'] ?? 'Gast';
                 <i class="fas fa-boxes fa-3x"></i>
                 <h3>Inventaris</h3>
             </a>
-            
+
             <a href="warehouse.php" class="NavCard">
                 <i class="fas fa-warehouse fa-3x"></i>
                 <h3>Magazijn</h3>
@@ -35,6 +36,7 @@ $username = $_SESSION['username'] ?? 'Gast';
                 <i class="fas fa-clipboard-list fa-3x"></i>
                 <h3>Bestellingen</h3>
             </a>
-    </div>
+        </div>
 </body>
+
 </html>

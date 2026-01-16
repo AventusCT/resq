@@ -1,77 +1,73 @@
 <?php
-session_start();
-if (isset($_SESSION['gebruiker_id'])) {
-    header("Location: index.php");
-    exit;
-}
+/**
+ * Login Page for ResQ
+ */
+require_once __DIR__ . '/Includes/db.php';
+require_once __DIR__ . '/classes/User.php';
 
 $error = '';
-if (isset($_GET['error'])) {
-    $error = htmlspecialchars($_GET['error']);
+$success = '';
+
+// Redirect if already logged in
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
 }
 
-$msg = '';
-if (isset($_GET['msg'])) {
-    if ($_GET['msg'] === 'nog niet ingelogd') {
-        $msg = "Je moet eerst inloggen om deze pagina te bekijken.";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    
+    if (empty($email) || empty($password)) {
+        $error = "Vul alle velden in.";
     } else {
-        $msg = htmlspecialchars($_GET['msg']);
+        $user = new User($db);
+        if ($user->login($email, $password)) {
+            header("Location: index.php");
+            exit();
+        } else {
+            $error = "Ongeldige inloggegevens.";
+        }
     }
 }
-include 'includes/header.php';
+
+// Check for timeout message
+if (isset($_GET['timeout'])) {
+    $error = "Uw sessie is verlopen. Log opnieuw in.";
+}
+
+include __DIR__ . '/Includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="nl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Inloggen</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/inventarisbeheer.css">
-</head>
-
-<body class="bg-light">
-
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-
-                <h3 class="mb-4 text-center">Inloggen</h3>
-
-                <?php if ($msg): ?>
-                    <div class="alert alert-warning"><?= $msg ?></div>
-                <?php endif; ?>
-
-                <?php if ($error): ?>
-                    <div class="alert alert-danger"><?= $error ?></div>
-                <?php endif; ?>
-
-                <form method="POST" action="verwerk_inlog.php" novalidate>
-                    <div class="form-group">
-                        <label for="email">E-mailadres</label>
-                        <input type="email" id="email" name="email" class="form-control" required autofocus>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="password">Wachtwoord</label>
-                        <input type="password" id="password" name="password" class="form-control" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-block">Inloggen</button>
-                </form>
-
-                <p class="mt-3 text-center">
-                    Nog geen account? <a href="registratie.php">Registreer hier</a>
-                    <br>
-                    terug naar hoofdmenu? <a href="index.php">Hoofdmenu</a>
-                </p>
-            </div>
+<div class="container">
+    <div class="login-card">
+        <div class="card-header">
+            <h2>Inloggen</h2>
+            <p>Log in op uw ResQ account</p>
+        </div>
+        <div class="card-body">
+            <?php if ($error): ?>
+                <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
+            <?php endif; ?>
+            <?php if ($success): ?>
+                <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
+            <?php endif; ?>
+            
+            <form method="POST" action="login.php" class="login-form">
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" name="email" id="email" class="form-control" 
+                           value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Inloggen</button>
+            </form>
+        </div>
+        <div class="card-footer">
+            <p>Geen account? <a href="registratie.php">Registreer hier</a></p>
         </div>
     </div>
-    </div>
-
-</body>
-
-</html>
+</div>
+<?php include __DIR__ . '/Includes/footer.php'; ?>
